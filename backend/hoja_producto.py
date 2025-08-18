@@ -1,7 +1,7 @@
 from backend.excel import obtenerLibro
 
 libro = obtenerLibro()
-titulo_hoja = "clientes"
+titulo_hoja = "productos"
 
 def inicializarHoja():
     hoja = libro.create_sheet(title=titulo_hoja)
@@ -11,13 +11,13 @@ def inicializarHoja():
     hoja.column_dimensions['C'].width = 15
     hoja.column_dimensions['D'].width = 15
 
-    cabeceras = ("Número de documento", "Nombre", "Celular", "Ciudad")
+    cabeceras = ("Id", "Nombre", "Precio", "Cantidad")
 
     hoja.append(cabeceras)
 
     return hoja
 
-def obtenerHojaDeClientes():
+def obtenerHojaDeProductos():
     if titulo_hoja in libro.sheetnames:
         return libro[titulo_hoja]
     else:
