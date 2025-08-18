@@ -1,8 +1,8 @@
-from backend.hoja_cliente import obtenerHojaDeClientes
+from backend.hoja_producto import obtenerHojaDeProductos
 
-hoja = obtenerHojaDeClientes()
+hoja = obtenerHojaDeProductos()
 
-def listarClientes():
+def listarProductos():
     filas = []
 
     refFilas = hoja.iter_rows(min_row=2, max_row=hoja.max_row, min_col=1, max_col=4)
@@ -16,12 +16,12 @@ def listarClientes():
         filas.append(valores)
     return filas
 
-def consultarCliente(documento):
+def consultarProducto(id):
     refFilas = hoja.iter_rows(min_row=2, max_row=hoja.max_row, min_col=1, max_col=4)
     refFilasEnum = enumerate(refFilas)
 
     for idx, refFila in refFilasEnum:
-        if refFila[0].value == documento:
+        if refFila[0].value == id:
             valores = []
             valores.append(idx)
 
