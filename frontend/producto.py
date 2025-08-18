@@ -55,7 +55,7 @@ def actualizarProducto():
     else:
         print("Error: verificar que el producto con ese ID si exista")
 
-def mostrarMenuDeClientes():
+def mostrarMenuDeProductos():
     separador = "--------------------------------------"
     bienvenida = "Bienvenido a UProducts powered by SuperTeam"
     opciones = {"1": listarProductos, "2": consultarProducto, "3": agregarProducto, "4": eliminarProducto, "5": actualizarProducto}
