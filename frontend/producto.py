@@ -12,12 +12,12 @@ def solicitarProducto():
 
     return (id, nombre, precio, cantidad)
 
-def listarClientes():
+def listarProductos():
     productos =  Producto.listarClientes()
 
     print(tabulate(productos, headers=headers, tablefmt="rounded_grid"))
 
-def consultarCliente():
+def consultarProducto():
     id = input("Ingrese el ID del producto: ")
 
     producto = Producto.consultarCliente(id)
@@ -40,7 +40,7 @@ def agregarProducto():
 def mostrarMenuDeProductos():
     separador = "--------------------------------------"
     bienvenida = "Bienvenido a UProducts powered by SuperTeam"
-    opciones = {"1": listarClientes, "2": consultarCliente, "3": agregarProducto}
+    opciones = {"1": listarProductos, "2": consultarProducto, "3": agregarProducto}
     solicitud = "Ingrese una opción: "
     salida = False
 
