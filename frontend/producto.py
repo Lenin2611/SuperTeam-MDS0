@@ -37,20 +37,29 @@ def agregarProducto():
     else:
         print("Error agregando el producto.")
 
+def eliminarProducto():
+    id = input("Ingrese el ID del producto: ")
+    producto_eliminado = Cliente.eliminarProducto(id)
+
+    if producto_eliminado:
+        print("Producto eliminado exitosamente.")
+    else: 
+        print("Error: verifique que el producto con ese ID si exista")
+
 def mostrarMenuDeProductos():
     separador = "--------------------------------------"
     bienvenida = "Bienvenido a UProducts powered by SuperTeam"
-    opciones = {"1": listarProductos, "2": consultarProducto, "3": agregarProducto}
+    opciones = {"1": listarProductos, "2": consultarProducto, "3": agregarProducto, "4": eliminarProducto}
     solicitud = "Ingrese una opción: "
     salida = False
 
     while True: 
-        menu = f"{bienvenida if salida == False else separador}\n1. Listar Productos\n2. Buscar Producto\n3. Agregar Producto\n4. Salir"
+        menu = f"{bienvenida if salida == False else separador}\n1. Listar Productos\n2. Buscar Producto\n3. Agregar Producto\n4. Eliminar Producto\n5. Salir"
         print(menu)
         opcion = input(solicitud)
         salida = False
 
-        if opcion == "4":
+        if opcion == "5":
             limpiar()
             break
 
