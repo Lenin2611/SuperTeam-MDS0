@@ -1,3 +1,3 @@
-from frontend.cliente import mostrarMenuDeClientes
+from frontend.producto import mostrarMenuDeProductos
 
-mostrarMenuDeClientes()
+mostrarMenuDeProductos()
