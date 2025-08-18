@@ -54,3 +54,18 @@ def eliminarProducto(id):
     guardarHoja(hoja)
 
     return True
+
+def actualizarProducto(id, nombre, precio, cantidad):
+    nuevos_valores = (id, nombre, precio, cantidad)
+
+    refFila = consultarProducto(id, False)
+
+    if refFila == None:
+        return False
+    
+    for celda, nuevo_valor in zip(refFila, nuevos_valores):
+        celda.value = nuevo_valor
+    
+    guardarHoja(hoja)
+
+    return True
