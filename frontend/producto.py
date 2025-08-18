@@ -13,14 +13,14 @@ def solicitarProducto():
     return (id, nombre, precio, cantidad)
 
 def listarProductos():
-    productos =  Producto.listarClientes()
+    productos =  Producto.listarProductos()
 
     print(tabulate(productos, headers=headers, tablefmt="rounded_grid"))
 
 def consultarProducto():
     id = input("Ingrese el ID del producto: ")
 
-    producto = Producto.consultarCliente(id)
+    producto = Producto.consultarProducto(id)
 
     if producto == None:
         print(f"Producto con ID {id} no existe")
