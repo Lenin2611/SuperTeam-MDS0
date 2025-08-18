@@ -47,7 +47,7 @@ def eliminarProducto():
         print("Error: verifique que el producto con ese ID si exista")
 
 def actualizarProducto():
-    nuevo_producto = solicitarProducto
+    nuevo_producto = solicitarProducto()
     producto_actualizado = Producto.actualizarProducto(*nuevo_producto)
 
     if producto_actualizado:
