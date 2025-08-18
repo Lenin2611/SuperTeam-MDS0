@@ -17,19 +17,22 @@ def listarProductos():
         filas.append(valores)
     return filas
 
-def consultarProducto(id):
+def consultarProducto(id, soloValores = True):
     refFilas = hoja.iter_rows(min_row=2, max_row=hoja.max_row, min_col=1, max_col=4)
     refFilasEnum = enumerate(refFilas)
 
     for idx, refFila in refFilasEnum:
         if refFila[0].value == id:
-            valores = []
-            valores.append(idx)
+            if soloValores:
+                valores = []
+                valores.append(idx)
 
-            for celda in refFila:
-                valores.append(celda.value)
-            
-            return valores
+                for celda in refFila:
+                    valores.append(celda.value)
+                
+                return valores
+            else:
+                return refFila
     else:
         return None
     
